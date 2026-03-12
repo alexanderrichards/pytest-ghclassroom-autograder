@@ -1,5 +1,6 @@
 import pytest
 from pytest_jsonreport.plugin import JSONReport
+from pathlib import Path
 
 from dataclasses import dataclass, field, asdict
 from enum import StrEnum
@@ -68,7 +69,8 @@ for test in report["tests"]:
                     message=message,
                     score=score))
 
+output = Path.cwd() / "my_report.json"
+output.write_bytes(b64encode(result.json()))
+#print(b64encode(result.json()).decode("utf-8"))
 
-print(b64encode(result.json()).decode("utf-8"))
-
-plugin.save_report('my_report.json')
+#plugin.save_report('my_report.json')

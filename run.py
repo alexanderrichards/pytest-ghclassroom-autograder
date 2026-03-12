@@ -58,7 +58,11 @@ result = Results(max_score=n_tests)
 for test in report["tests"]:
     status = status_lookup.get(test["outcome"], Status.ERROR)
     score = 1 if status is Status.PASS else 0
-    message = test['call']['stdout']  # lots of options here, check out https://pypi.org/project/pytest-json-report/#format
+    for stage in ("teardown", "call", "setup"):
+        if stage in test:
+            # lots of options here, check out https://pypi.org/project/pytest-json-report/#format
+            message = "\n".join((test[stage].get("stdout", ""), test[stage].get("stderr", "")))
+            break
     result.add(Test(name=test["nodeid"],
                     status=status,
                     message=message,

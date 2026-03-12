@@ -54,7 +54,7 @@ pytest.main(['--json-report-file=none', '-vv', "./tests"], plugins=[plugin])
 
 report = plugin.report
 n_tests = report['summary'].get("collected", 0)  # could use total instead of collected
-result = Result(max_score=n_tests)
+result = Results(max_score=n_tests)
 for test in report["tests"]:
     status = status_lookup.get(test["outcome"], Status.ERROR)
     score = 1 if status is Status.PASS else 0

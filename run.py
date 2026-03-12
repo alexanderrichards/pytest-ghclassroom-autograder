@@ -70,7 +70,7 @@ for test in report["tests"]:
                     score=score))
 
 output = Path.cwd() / "my_report.json"
-output.write_bytes(b64encode(result.json()))
+output.write_text(b64encode(result.json()).decode("utf-8"))
 #print(b64encode(result.json()).decode("utf-8"))
 
 #plugin.save_report('my_report.json')

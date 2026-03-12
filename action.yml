@@ -24,5 +24,6 @@ runs:
     - name: Run Autograder
       shell: bash
       run: |
-        result=$(python ${{github.action_path}}/run.py)
-        echo "result=$result" >> $GITHUB_OUTPUT
+        python ${{github.action_path}}/run.py
+        echo "result=`cat my_report.json`" >> $GITHUB_OUTPUT
+        # echo "result=$result" >> $GITHUB_OUTPUT

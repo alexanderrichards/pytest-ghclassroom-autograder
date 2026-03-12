@@ -21,3 +21,6 @@ runs:
     - name: Install Dependencies
       shell: bash
       run: python -m pip install ${{github.action_path}}
+    - name: Run Autograder
+      shell: bash
+      run: python ${{github.action_path}}/run.py

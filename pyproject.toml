@@ -19,6 +19,3 @@ dependencies = [
   "pytest",
   "pytest-json-report"
 ]
-
-[tool.setuptools]
-packages = ["pytestautograder"]

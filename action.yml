@@ -27,9 +27,9 @@ runs:
         python ${{github.action_path}}/run.py
         ls -l my_report.json
         {
-          echo "result<<EOF"
+          echo "result<<__END_REPORT__"
           cat my_report.json
-          echo "EOF"
+          echo __END_REPORT__
         } >> "$GITHUB_OUTPUT"
 
         #echo "result=`cat my_report.json`" >> $GITHUB_OUTPUT

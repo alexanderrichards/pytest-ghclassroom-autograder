@@ -1,0 +1,24 @@
+[project]
+name = "pytest_ghclassroom_autograder"
+version = "0.1.0"
+description = "Imperial Year 2 Physics Computing Lab. Pytest autograder"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "GPL-3.0"
+authors = [
+  {name = "Alexander Richards", email = "a.richards@imperial.ac.uk"}
+]
+maintainers = [
+  {name = "Alexander Richards", email = "a.richards@imperial.ac.uk"}
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
+dependencies = [
+  "pytest",
+  "pytest-json-report"
+]
+
+[tool.setuptools]
+packages = ["pytestautograder"]

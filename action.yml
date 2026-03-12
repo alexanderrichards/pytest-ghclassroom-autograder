@@ -28,5 +28,5 @@ runs:
       shell: bash
       run: |
         python ${{github.action_path}}/run.py
-        result = "$(cat my_report.json)"
+        result="$(cat my_report.json)"
         echo "result=$result" >> "$GITHUB_OUTPUT"

@@ -51,7 +51,7 @@ status_lookup = {"passed": Status.PASS,
                  "error": Status.ERROR}
 
 plugin = JSONReport()
-pytest.main(['--json-report-file=none', '-vv', "./tests"], plugins=[plugin])
+pytest.main(['--color=yes', '--json-report-file=none', '-vv', "./tests"], plugins=[plugin])
 
 report = plugin.report
 n_tests = report['summary'].get("collected", 0)  # could use total instead of collected
